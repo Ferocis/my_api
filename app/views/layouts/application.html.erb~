@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MyApi</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<%= form_for (@tweet = Tweet.new, :url => user_tweet_path) do |tweet_form| %>
+<%= tweet_form.text_area :tweet_content, :id => "tweet" %>
+<%= tweet_form.submit "Tweet" %>
+<% end %>
+
+
+<%=# yield %>
+
+</body>
+</html>
