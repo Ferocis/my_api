@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 
 
+gem 'twitter-bootstrap-rails'
+gem 'twitter-text'
 gem 'twitter'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

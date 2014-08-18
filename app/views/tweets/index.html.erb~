@@ -1,8 +1,17 @@
-<ul>
-  <% @tweet_news.each do |f| %>
-    <li>
-      <%= f.text%>
-      <span><%= time_ago_in_words(f.created_at) %> ago</span>
-    </li>
-  <% end %>
-</ul>
+<form class="form">
+	<%= form_tag(tweets_path, :method => "get", id: "search-form") do %>
+	<%= text_field_tag :search, params[:search], placeholder: "Search" %>
+	<%= submit_tag "Search" %>
+	<% end %>
+</form>
+
+
+<div id="my-tweets">
+	<div class="jumbotrom">
+		<div class="container">
+			<div class="row">
+				<%= render @tweets %>
+			</div>
+		</div>
+	</div>
+</div>
