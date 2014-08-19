@@ -1,3 +1,4 @@
+require 'cats'
 class Tweet < ActiveRecord::Base
 	def self.search(search)
 		client = Twitter::REST::Client.new do |config|
@@ -10,9 +11,9 @@ class Tweet < ActiveRecord::Base
 
 	begin
 		client.user_timeline(search, options)	
-	rescue => ex
+	rescue
 		client.user_timeline("", options)
-	end
-	
+	end	
+
 	end	
 end

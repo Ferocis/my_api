@@ -1,5 +1,10 @@
 source 'https://rubygems.org'
 
+gem 'rb-readline'
+
+gem 'rspec-rails', "~> 2.14.0"
+
+gem 'cats'
 
 gem 'twitter-bootstrap-rails'
 gem 'twitter-text'
