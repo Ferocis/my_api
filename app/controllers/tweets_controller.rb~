@@ -6,27 +6,26 @@ end
 	
 def show_tweets
 #	@tweet_news = Tweet.search(params[:search])
-
-
-	client = Twitter::REST::Client.new do |config|
-		config.consumer_key = 'rkv9vy0QcRY35Yw5Zq9aD2WMW'
-		config.consumer_secret = 'jIIvit7otJeRsIhsBjA8GEQMXdyCBk55gy2ljQw9GOjJDhbXov'
-		config.access_token = '2737233824-r9UnPv2NyzTQGAIxv7FKGgDq4QWHFxQ97DnxqwG'
-		config.access_token_secret = 'o7wZgITAcpGvt4TTVvVOrMtQKPTVwDGIu49xP7oINkbKB'
-		end
-
-		options = {:count => 50, :include_rts => true}
-
-#		@tweet_news = client.user_timeline("wbzyl", options)
-
-
-		@tweet_news = client.user_timeline(search, options)
-
+	
+	@tweets = Tweet.search(params[:search])
 
 	respond_to do |format|
 		format.html
 		format.js
 	end
+end
+
+
+
+def new
+end
+
+def create
+	current_user.tweet(twitter_params[:message])
+end
+
+def twitter_params
+	params.require(:tweet).permit(:message)
 end
 
 end

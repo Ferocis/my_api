@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'omniauth-twitter', '~> 1.0.1'
+
 gem 'rb-readline'
 
 gem 'rspec-rails', "~> 2.14.0"

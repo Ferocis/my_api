@@ -1,5 +1,10 @@
 Rails.application.configure do
-  # Settings specified here will take precedence over those in config/application.rb.
+  
+  config.twitter_key = "rkv9vy0QcRY35Yw5Zq9aD2WMW"
+  config.twitter_secret = "jIIvit7otJeRsIhsBjA8GEQMXdyCBk55gy2ljQw9GOjJDhbXov"
+
+
+# Settings specified here will take precedence over those in config/application.rb.
 
   # In the development environment your application's code is reloaded on
   # every request. This slows down response time but is perfect for development
