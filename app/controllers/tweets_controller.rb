@@ -1,5 +1,5 @@
 class TweetsController < ApplicationController
- 
+
 def index
 end
 
@@ -8,6 +8,7 @@ end
 
 def new
 end
+
 
 def create
 	current_user.tweet(twitter_params[:message])

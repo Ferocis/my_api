@@ -1,4 +1,3 @@
-require 'cats'
 class Tweet < ActiveRecord::Base
 	def self.search(search)
 		client = Twitter::REST::Client.new do |config|

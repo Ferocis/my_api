@@ -1,24 +1,20 @@
 class TweetsController < ApplicationController
- 
+  protect_from_forgery with: :exception
+  helper_method :current_user
+
+
 def index
-	show_tweets
 end
 
 def home
-	show_tweets
-end
-	
-def show_tweets
-	
-	@tweets = Tweet.search(params[:search])
-
-	respond_to do |format|
-		format.html
-		format.js
-	end
 end
 
 def new
+end
+
+
+def current_user
+	@current_user ||= User.find(session[:user_id]) if session[:user_id]
 end
 
 def create
