@@ -1,6 +1,8 @@
 require 'spec_helper'
 
 describe HomeController do
+  render_views
+
 
   describe "GET 'show'" do
     it "returns http success" do
@@ -8,5 +10,4 @@ describe HomeController do
       response.should be_success
     end
   end
-
 end

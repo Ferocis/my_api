@@ -9,7 +9,7 @@
 		<% end %>
 	</form>
 
-	<ul class='tweet'>
+	<ul class="list-inline">
 		<% @tweets.each do |f| %>
 			<li>
 				<%= raw auto_link(f.text) %>

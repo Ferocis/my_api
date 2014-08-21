@@ -9,6 +9,14 @@ describe SessionsController do
     end
   end
 
+  describe SessionsController do
+    it "allows authenticated access" do
+	SessionsController.create
+	get :index
+	response.should be_success
+    end
+  end
+
 #  describe "GET 'create'" do
 #    it "returns http success" do
 #      get 'create'
@@ -22,5 +30,4 @@ describe SessionsController do
 #      response.should be_success
 #    end
 #  end
-
 end
