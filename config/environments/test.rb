@@ -1,4 +1,8 @@
 Rails.application.configure do
+
+  config.twitter_key = "rkv9vy0QcRY35Yw5Zq9aD2WMW"
+  config.twitter_secret = "jIIvit7otJeRsIhsBjA8GEQMXdyCBk55gy2ljQw9GOjJDhbXov"
+
   # Settings specified here will take precedence over those in config/application.rb.
 
   # The test environment is used exclusively to run your application's

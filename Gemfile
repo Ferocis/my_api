@@ -4,9 +4,8 @@ gem 'omniauth-twitter', '~> 1.0.1'
 
 gem 'rb-readline'
 
-gem 'rspec-rails', "~> 2.14.0"
-
-gem 'cats'
+gem 'rspec-rails'
+gem 'rspec'
 
 gem 'twitter-bootstrap-rails'
 gem 'twitter-text'
