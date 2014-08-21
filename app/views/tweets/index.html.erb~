@@ -6,12 +6,11 @@
 </form>
 
 
-<div id="my-tweets">
-	<div class="jumbotrom">
-		<div class="container">
-			<div class="row">
-				<%= render @tweets %>
-			</div>
-		</div>
-	</div>
-</div>
+<ul class='tweet'>
+	<% @tweets.each do |f| %>
+		<li>
+			<%= raw auto_link(f.text) %>
+			<span><%= time_ago_in_words(f.created_at) %> ago</span>
+		</li>
+	<% end %>
+</ul>
