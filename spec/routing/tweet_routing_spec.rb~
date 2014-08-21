@@ -1,0 +1,21 @@
+require 'spec_helper'
+
+describe "routes for tweets" do
+  it "routes /tweets to tweet controller" do
+	expect(get("/tweets")).to route_to("tweets#index")
+  end
+end
+
+  
+describe "routes for home" do
+  it "routes / to home controller" do
+	expect(get("/")).to route_to("home#show")
+  end
+end
+
+
+describe "route for auth callback" do
+  it "routes auth/:provider/callback to session#create" do
+	expect(get("auth/twitter/callback")).to route_to("session#create")
+  end
+end
