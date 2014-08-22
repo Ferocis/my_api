@@ -1,5 +1,7 @@
 require 'spec_helper'
 
 describe "sessions/create.html.erb" do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it "web controller should be SessionsController" do
+	controller.controller_path.should eq("sessions")
+  end
 end
