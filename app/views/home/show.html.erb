@@ -10,11 +10,12 @@
 	</form>
 
 	<ul class="list-inline">
-		<% @tweets.each do |f| %>
+		<% unless @tweets.nil? || @tweets.each do |f| %>
 			<li>
 				<%= raw auto_link(f.text) %>
 				<span><%= time_ago_in_words(f.created_at) %> ago</span>
 			</li>
+		<% end %>
 		<% end %>
 	</ul>
 

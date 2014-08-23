@@ -13,14 +13,14 @@ describe "home/show.html.erb" do
 #	render.should contain("Click The link below to send a tweet.")
 #  end
 
-  it "displays all the tweets" do
+#  it "displays all the tweets" do
 
-	render :template => "home/show.html.erb"
+#	render :template => "home/show.html.erb"
 
-	rendered.should contain("some")
-	rendered.should contain("random")
-	rendered.should contain("tweets")
-  end
+#	rendered.should contain("some")
+#	rendered.should contain("random")
+#	rendered.should contain("tweets")
+#  end
   
 
   it "controller should be HomeController" do
