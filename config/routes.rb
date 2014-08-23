@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   resources :tweets, only: [:new, :create]
   resources :sessions, only: [:create, :destroy]
   resource :home, only: [:show]
+
+#  match '/auth/:provider/callback' => 'sessions#create'
  
   root to: 'home#show'
 
