@@ -11,6 +11,19 @@ RSpec.configure do |config|
 	require 'rspec/rails'
 	require 'rspec/autorun'
 
+
+	OmniAuth.config.test_mode = true
+	omniauth_hash = { 'provider' => 'twitter',
+                    'uid' => '12345',
+                    'info' => {
+                        'name' => 'ja',
+                        'email' => 'hello@iamtherobot.com',
+                        'nickname' => 'jaNick'
+                    }
+                    
+  	}
+
+
   config.treat_symbols_as_metadata_keys_with_true_values = true
   config.run_all_when_everything_filtered = true
   config.filter_run :focus

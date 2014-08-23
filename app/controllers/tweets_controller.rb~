@@ -1,7 +1,4 @@
 class TweetsController < ApplicationController
-  protect_from_forgery with: :exception
-  helper_method :current_user
-
 
 def index
 end
@@ -13,16 +10,12 @@ def new
 end
 
 
-def current_user
-	@current_user ||= User.find(session[:user_id]) if session[:user_id]
-end
-
 def create
-	current_user.tweet(twitter_params[:message])
+current_user.tweet(twitter_params[:message])
 end
 
 def twitter_params
-	params.require(:tweet).permit(:message)
+params.require(:tweet).permit(:message)
 end
 
 end

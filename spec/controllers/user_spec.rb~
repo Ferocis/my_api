@@ -1,0 +1,30 @@
+def stub_env_for_omniauth(provider = "twitter", uid = "1234567", email = "bob@contoso.com", name = "John Doe")
+  env = { "omniauth.auth" => { "provider" => provider, "uid" => uid, "info" => { "email" => email, "name" => name } } }
+  @controller.stub!(:env).and_return(env)
+  env
+end
+
+describe User do
+  before :each do
+    # This a Devise specific thing for functional tests. See https://github.com/plataformatec/devise/issues/closed#issue/608
+    request.env["devise.mapping"] = Devise.mappings[:user]
+  end
+  describe ".create" do
+
+    it "should redirect back to sign_up page with an error when omniauth.auth is missing" do
+      @controller.stub!(:env).and_return({"some_other_key" => "some_other_value"})
+      get :twitter
+      flash[:error].should be
+      flash[:error].should match /Unexpected response from Facebook\./
+      response.should redirect_to new_user_registration_url
+    end
+
+    it "should redirect back to sign_up page with an error when provider is missing" do
+      stub_env_for_omniauth(nil)
+      get :twitter
+      flash[:error].should be
+      flash[:error].should match /Unexpected response from Facebook: Provider information is missing/
+      response.should redirect_to new_user_registration_url
+    end
+  end
+end

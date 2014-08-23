@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+gem 'spork'
+gem 'devise'
+
 gem 'omniauth-twitter', '~> 1.0.1'
 
 gem 'rb-readline'
@@ -9,7 +12,7 @@ gem 'rspec'
 
 gem 'twitter-bootstrap-rails'
 gem 'twitter-text'
-gem 'twitter'
+gem 'twitter', '~> 5.3.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.4'
