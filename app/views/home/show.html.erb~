@@ -9,17 +9,19 @@
 		<% end %>
 	</form>
 
-	<div class="row-fluid">
+	<table>
 		<% unless @tweets.nil? || @tweets.each do |f| %>
-			<div class="span1 well">
+			<tr>
+				<td>
 
 
 					<p class="text-info"><%= raw auto_link(f.text) %>
 					<span><%= raw time_ago_in_words(f.created_at) %> ago</span></p>
 
-			</div>
+				</td>
+			</tr>
 		<% end %><% end %>
-	</div>
+	</table>
 	
 <% else %>
     <p>You must log in to send a tweet.</p>

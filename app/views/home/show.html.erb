@@ -8,8 +8,9 @@
 		<%= submit_tag "Search" %>
 		<% end %>
 	</form>
-
-	<table>
+	
+	<div style="margin-left:15px">
+	<table class="table table-striped" style="width:100%">
 		<% unless @tweets.nil? || @tweets.each do |f| %>
 			<tr>
 				<td>
@@ -22,7 +23,8 @@
 			</tr>
 		<% end %><% end %>
 	</table>
-	
+	</div>
+
 <% else %>
     <p>You must log in to send a tweet.</p>
 <% end %>
