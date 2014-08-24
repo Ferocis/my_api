@@ -16,11 +16,9 @@
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<% if current_user %>
 
-					<form class="navbar-form navbar-left" role="search">
-						<%= form_tag(tweets_path, :method => "get", id: "search-form") do %>
-						<%= text_field_tag :search, params[:search], placeholder: "Search" %>
-						<%= submit_tag "Search" %>
-						<% end %>
+					<form action="/search" method="get" class="navbar-form navbar-left" role="search">
+						<input id="search" name="search" type="text" placeholder="Search" class="form-control"/>
+  						<input name="commit" type="submit" value="Search" class="form-control" />
 					</form>
 
 					<ul class="nav navbar-nav navbar-left">			
@@ -30,9 +28,13 @@
 						<li><a class=navbar-brand href="">Signed in as <strong><%= current_user.name %></strong>!</a></li>
 						<li><%= link_to " Sign out", signout_path, id: "sign_out" %></li>
 					</ul>
+
 				<% else %>
-					<%= link_to "Sign in with Twitter", "/auth/twitter", id: "sign_in" %>
+					<ul class="nav navbar-nav navbar-right">
+						<li><%= link_to "Sign in with Twitter", "/auth/twitter", id: "sign_in" %></li>
+					</ul>
 				<% end %>
+
 		</div>
 	</nav>	
 

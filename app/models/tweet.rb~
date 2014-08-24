@@ -8,7 +8,7 @@ class Tweet < ActiveRecord::Base
 	end
 	options = {:count => 50, :include_rts => true}
 
-	begin		
+	begin
 		client.user_timeline(search, options)	
 	rescue
 		client.user_timeline("", options)
