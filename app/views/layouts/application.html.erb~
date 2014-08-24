@@ -19,13 +19,5 @@
 	    <%= yield %>
     </div>
 
-	<form class="form">
-		<%= form_tag(tweets_path, :method => "get", id: "search-form") do %>
-		<%= text_field_tag :search, params[:search], placeholder: "Search" %>
-		<%= submit_tag "Search" %>
-		<% end %>
-	</form>
-
-
   </body>
 </html>

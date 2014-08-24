@@ -7,6 +7,7 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
+  <nav class="navbar navbar-fixed-top navbar-default"
     <div>
       <% if current_user %>
         Signed in as <strong><%= current_user.name %></strong>!
@@ -15,6 +16,7 @@
         <%= link_to "Sign in with Twitter", "/auth/twitter", id: "sign_in" %>
       <% end %>
     </div>
+  </nav.
     <div>
 	    <%= yield %>
     </div>
