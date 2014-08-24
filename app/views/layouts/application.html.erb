@@ -8,12 +8,36 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
-      <% if current_user %>
-        Signed in as <strong><%= current_user.name %></strong>!
-        <%= link_to "Sign out", signout_path, id: "sign_out" %>
-      <% else %>
-        <%= link_to "Sign in with Twitter", "/auth/twitter", id: "sign_in" %>
-      <% end %>
+	<nav class="navbar navbar-default" role="navigation">
+		<div class="container-fluid">
+		 	<div class="navbar-header">
+				<a class="navbar-brand" href="/">Home</a>
+			</div>
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<% if current_user %>
+
+					<form class="navbar-form navbar-left" role="search">
+						<%= form_tag(tweets_path, :method => "get", id: "search-form") do %>
+						<%= text_field_tag :search, params[:search], placeholder: "Search" %>
+						<%= submit_tag "Search" %>
+						<% end %>
+					</form>
+
+					<ul class="nav navbar-nav navbar-left">			
+						<li><%= link_to "Send a Tweet", new_tweet_path %></li>			
+					</ul>
+					<ul class="nav navbar-nav navbar-right">			
+						<li><a class=navbar-brand href="">Signed in as <strong><%= current_user.name %></strong>!</a></li>
+						<li><%= link_to " Sign out", signout_path, id: "sign_out" %></li>
+					</ul>
+				<% else %>
+					<%= link_to "Sign in with Twitter", "/auth/twitter", id: "sign_in" %>
+				<% end %>
+		</div>
+	</nav>	
+
+	
+
     <div>
 	    <%= yield %>
     </div>

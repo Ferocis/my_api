@@ -198,7 +198,6 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   omniauth-twitter (~> 1.0.1)
-  rails (= 4.1.4)
   rb-readline
   rspec
   rspec-rails
