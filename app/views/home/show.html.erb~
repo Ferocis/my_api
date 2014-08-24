@@ -2,22 +2,25 @@
     <p>Click The link below to send a tweet.</p>
     <%= link_to "Send a Tweet", new_tweet_path %>
 
-	<form class="form">
+	<form class="class="navbar-search pull-left"">
 		<%= form_tag(tweets_path, :method => "get", id: "search-form") do %>
 		<%= text_field_tag :search, params[:search], placeholder: "Search" %>
 		<%= submit_tag "Search" %>
 		<% end %>
 	</form>
 
-<ul class='tweet'>
-<% @tweets.each do |f| %>
-<li>
-<%= raw auto_link(f.text) %>
-<span><%= time_ago_in_words(f.created_at) %> ago</span>
-</li>
-<% end %>
-</ul>
+	<div class="row-fluid">
+		<% unless @tweets.nil? || @tweets.each do |f| %>
+			<div class="span1 well">
 
+
+					<p class="text-info"><%= raw auto_link(f.text) %>
+					<span><%= raw time_ago_in_words(f.created_at) %> ago</span></p>
+
+			</div>
+		<% end %><% end %>
+	</div>
+	
 <% else %>
     <p>You must log in to send a tweet.</p>
 <% end %>

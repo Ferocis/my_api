@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+ruby '2.1.2'
+gem 'rails', '4.1.4'
+
 gem 'spork'
 gem 'devise'
 
@@ -10,12 +13,12 @@ gem 'rb-readline'
 gem 'rspec-rails'
 gem 'rspec'
 
+gem 'bootstrap-sass'
+gem 'bootstrap'
 gem 'twitter-bootstrap-rails'
 gem 'twitter-text'
 gem 'twitter', '~> 5.3.1'
 
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.1.4'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use SCSS for stylesheets

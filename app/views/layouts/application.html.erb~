@@ -2,11 +2,13 @@
 <html>
   <head>
     <title>MyApi</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
     <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
     <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
     <%= csrf_meta_tags %>
   </head>
   <body>
+  <nav class="navbar navbar-fixed-top navbar-default"
     <div>
       <% if current_user %>
         Signed in as <strong><%= current_user.name %></strong>!
@@ -15,6 +17,7 @@
         <%= link_to "Sign in with Twitter", "/auth/twitter", id: "sign_in" %>
       <% end %>
     </div>
+  </nav.
     <div>
 	    <%= yield %>
     </div>
