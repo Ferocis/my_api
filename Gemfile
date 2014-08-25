@@ -7,6 +7,7 @@ gem 'omniauth-twitter', '~> 1.0.1'
 
 gem 'rb-readline'
 
+gem 'webrat'
 gem 'rspec-rails'
 gem 'rspec'
 

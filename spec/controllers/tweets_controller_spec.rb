@@ -13,7 +13,6 @@ describe TweetsController do
     get 'new'
     response.should render_template "layouts/application"
   end
-  
-# spece dla modelu Tweet są wśród speców SessionsController
+
 
 end

@@ -11,6 +11,10 @@ describe HomeController do
     end
   end
 
+  it "should render home template" do
+    expect { get :home }.to render_template(layout: true)
+  end
+
   it "should load application layout" do
     get 'show'
     response.should render_template "layouts/application"

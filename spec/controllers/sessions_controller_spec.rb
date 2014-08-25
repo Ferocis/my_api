@@ -18,7 +18,6 @@ describe SessionsController do
     get 'create'
     response.should render_template "layouts/application"
   end
-
   
   it "as an authorized user" do
    session[:omniauth_twitter].should eq( { 'uid' => '12345', 'provider' => 'twitter', 'credentials' => { 'token' => 'token', 'secret' => 'secret' }  } )
@@ -35,6 +34,7 @@ describe SessionsController do
 	User.tweet("some random string").should be_success
     end
   end
+
   describe "GET 'new'" do
     it "returns http success" do
       get 'new'
