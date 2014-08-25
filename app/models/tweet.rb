@@ -7,11 +7,13 @@ class Tweet < ActiveRecord::Base
 		config.access_token_secret = 'tcCtiP50Tfb0UG6B6NjMFwBXfxrHAuZ5McPMuA4uHwx6g'
 	end
 	options = {:count => 50, :include_rts => true}
+	
+	client.user_timeline("blabla", options)
 
 	begin		
 		client.user_timeline(search, options)	
 	rescue
-		client.user_timeline("", options)
+		client.user_timeline("blabla", options)
 	end	
 
 	end	
