@@ -1,0 +1,19 @@
+require 'spec_helper'
+
+describe "home/show.html.erb" do
+  before(:each) do
+	@tweets = ["some", "random", "tweets"]
+  end
+
+  it "" do
+    if !current_user
+	    render
+	    rendered.should contain("some")
+    end
+  end
+
+
+  it "controller should be HomeController" do
+	controller.controller_path.should eq("home")
+  end
+end
