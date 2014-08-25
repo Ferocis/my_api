@@ -1,7 +1,8 @@
-
-<p>
-	<form method="post" class="navbar-form navbar-left">
-		<input id="message" name="message" type="text" class="form-control" />
-		<input name="post" type="submit" value="Post" class="form-control" />
-	</form>
-</p>
+<div style="margin:15px 15px 15px"">
+	<p>
+	  <%= form_for :tweet, url: tweets_path, method: :post do |f| %>
+	    <%= f.text_field :message %>
+	    <%= f.submit "Send Tweet" %>
+	  <% end %>
+	</p>
+</div>

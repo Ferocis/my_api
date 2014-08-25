@@ -18,8 +18,11 @@ class User < ActiveRecord::Base
       config.access_token        = oauth_token
       config.access_token_secret = oauth_secret
     end
-    
-    client.update(tweet)
-   
+
+    begin
+	    client.update(tweet)
+    rescue
+    end
+
     end
 end

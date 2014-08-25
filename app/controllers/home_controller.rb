@@ -4,8 +4,6 @@ class HomeController < ApplicationController
   end
 
 	def show_tweets
-	
-
 		@tweets = Tweet.search(params[:search])
 
 		respond_to do |format|
