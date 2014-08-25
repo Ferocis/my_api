@@ -10,4 +10,10 @@ describe HomeController do
       response.should be_success
     end
   end
+
+  it "should load application layout" do
+    get 'show'
+    response.should render_template "layouts/application"
+  end
+
 end

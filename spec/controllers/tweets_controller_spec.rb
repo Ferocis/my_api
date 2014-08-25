@@ -9,12 +9,11 @@ describe TweetsController do
     end
   end
 
+  it "should load application layout" do
+    get 'new'
+    response.should render_template "layouts/application"
+  end
   
-#  describe "GET 'create'" do
-#    it "returns http success" do
-#      get 'create'
-#      response.should be_success
-#    end
-#  end
+# spece dla modelu Tweet są wśród speców SessionsController
 
 end

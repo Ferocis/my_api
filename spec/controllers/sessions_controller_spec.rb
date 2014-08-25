@@ -13,6 +13,12 @@ describe SessionsController do
     }
     session[:omniauth_twitter] = OmniAuth.config.mock_auth[:twitter]
   end
+
+  it "should load application layout" do
+    get 'create'
+    response.should render_template "layouts/application"
+  end
+
   
   it "as an authorized user" do
    session[:omniauth_twitter].should eq( { 'uid' => '12345', 'provider' => 'twitter', 'credentials' => { 'token' => 'token', 'secret' => 'secret' }  } )
