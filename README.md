@@ -1,8 +1,11 @@
 my_api
 ======
+
 ## Opis
 Aplikacja służy do wyświetlania i wysyłania tweetów na popularny portal społecznościowy Twitter. Formularz `Search' służy do wyświetlania tweetów użytkownika. Link 'Send new tweet' jest przeznaczony do wysyłania tweetów. Domyślnie przy pozostawieniu pola 'search' w formularzu pustym, aplikacja wyświetli tweety zalogowanego użytkownika.
 
+## Użyte API
+* [Twitter REST API](https://dev.twitter.com/docs/api/1.1)
 
 ## Token systemu Travis
 [![Build Status](https://travis-ci.org/Ferocis/my_api.svg?branch=master)](https://travis-ci.org/Ferocis/my_api)
